@@ -1,0 +1,4 @@
+/* components/calendar/calendar.wxss */
+.calendar {
+  --calendar-height: 1000rpx;
+}

@@ -1,0 +1,7 @@
+<!--components/calendar/calendar.wxml-->
+<calendar
+  show-title="{{ false }}"
+  poppable="{{ false }}"
+  show-confirm="{{ false }}"
+  class="calendar"
+/>
