@@ -1,12 +1,25 @@
 <!--pages/timeKeep/timeKeep.wxml-->
 <view class="tau">
+  <image class="page" src="../../images/背景图片.webp" mode="aspectFill"></image>
+
+  <button plain>时间</button>
+
+  <van-cell title="展示弹出层" is-link bind:click="showPopup" />
+  <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
+
   <view class="effort">
-    <text class="effort-1">本月工钱</text>
-    <text class="effort-2">上班0个工</text>
-    <text class="effort-1">0.00</text>
-    <text class="effort-2">-----</text>
-    <text class="effort-1">工量0笔</text>
-    <text class="effort-2">加班0小时</text>
+    <view class="effort-1">
+      <text>本月工钱</text>
+      <text>上班0个工</text>
+    </view>
+    <view class="effort-2">
+      <text>0.00</text>
+      <text>----------</text>
+    </view>
+    <view class="effort-3">
+      <text>工量0笔</text>
+      <text>加班0小时</text>
+    </view>
   </view>
   <calendar></calendar>
 </view>
