@@ -1,0 +1,35 @@
+/* components/CalendarBox/CalendarBox.wxss */
+.ctar {
+  border: none !important;
+}
+
+.in {
+  display: flex;
+  justify-content: center;
+}
+
+.in text {
+  font-size:20px;
+  margin-bottom: 50rpx;
+  margin-top: 50rpx;
+}
+
+.adjust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*
+    1. 默认子元素会横线排列
+    flex-direction: 决定子元素在主轴上的排列方向 默认是横向的
+    justify-content: 在主轴方向上的排列方式；
+    align-items: 在负轴上的排列方式；
+  */
+}
+
+.ctar1 {
+  margin: 0rpx;
+}
+
+
+
+

@@ -1,11 +1,6 @@
 <!--pages/timeKeep/timeKeep.wxml-->
 <view class="tau">
-  <image class="page" src="../../images/背景图片.webp" mode="aspectFill"></image>
-
-  <button plain>时间</button>
-
-  <van-cell title="展示弹出层" is-link bind:click="showPopup" />
-  <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
+  <calendarBox></calendarBox>
 
   <view class="effort">
     <view class="effort-1">
@@ -21,5 +16,4 @@
       <text>加班0小时</text>
     </view>
   </view>
-  <calendar></calendar>
 </view>

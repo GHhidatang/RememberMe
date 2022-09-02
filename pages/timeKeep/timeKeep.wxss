@@ -1,14 +1,9 @@
 /* pages/timeKeep/timeKeep.wxss */
 
-.page {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+.tau {
+  width: 750rpx;
+  height: 1334rpx; 
+  background: -webkit-linear-gradient(top,rgb(1, 158, 206),#a1f4ff,rgb(240, 255, 255));
 }
 
 .effort {
@@ -43,3 +38,5 @@
   display: flex;
   justify-content: space-between;
 }
+
+
