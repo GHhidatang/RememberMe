@@ -3,7 +3,8 @@
 .tau {
   width: 750rpx;
   height: 1334rpx; 
-  background: -webkit-linear-gradient(top,rgb(1, 158, 206),#a1f4ff,rgb(240, 255, 255));
+  /* background: -webkit-linear-gradient(top,rgb(1, 158, 206),#a1f4ff,rgb(240, 255, 255)); */
+  background-color: #d9d9d9;
 }
 
 .effort {

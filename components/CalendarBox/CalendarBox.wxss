@@ -16,7 +16,7 @@
 
 .adjust {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   /*
     1. 默认子元素会横线排列
@@ -26,8 +26,28 @@
   */
 }
 
+.adjust > text {
+  width: calc(100% - 328rpx);
+  text-align: center;
+}
+
 .ctar1 {
   margin: 0rpx;
+  background: transparent;
+}
+
+.ctar1::after {
+  border: none;
+}
+
+.render-cur {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+.render-cur > .month{
+  width: calc(25% - 10rpx);
+  margin: 5rpx;
 }
 
 

@@ -1,2 +1,10 @@
 <!--components/calendar/calendar.wxml-->
-
+<view>
+  <view class="calendarWeek">
+    <text wx:for="{{ day_date }}" wx:key="index" wx:for-item="item">{{ item }}</text>
+  </view>
+  <view class="calendarDate">
+    <view wx:for="{{ week }}" class="day-item placeholder-item"></view>
+    <button bindtap="calendarDays" wx:for="{{ lastDay }}" data-mothNum="{{ monthNum }}" wx:for-item="monthNum" wx:key="index" class="day-item">{{ monthNum + 1 }}</button>
+  </view>
+</view>

@@ -1,16 +1,18 @@
 <!--components/CalendarBox/CalendarBox.wxml-->
-<button class="ctar" plain="true" bindtap="switchDate">{{ month }}</button>
+<button class="ctar" plain="true" bindtap="switchDate">{{ year }}年{{ selectMonth }}月</button>
 <van-popup class="popup_1" show="{{ show }}" bind:close="disableDisplayLayer" 
 position="bottom" round closeable>
   <view class="in">
     <text>选择月份</text>
   </view>
+
   <view class="adjust">
-    <button class="ctar ctar1">上一年</button>
-    <text>{{ years }}</text>
-    <button class="ctar ctar1">下一年</button>
+    <button class="ctar1" bindtap="lastYear">上一年</button>
+    <text>{{ year }}</text>
+    <button class="ctar1" hidden="{{ year == nowYear }}" bindtap="nextYear">下一年</button>
   </view>
-  <view>
-    
+
+  <view class="render-cur" >
+    <button bindtap="clickOnSelectMonth" data-month="{{ monthNum }}" wx:for="{{ getMonths }}" wx:for-item="monthNum" wx:key="index" class="month">{{ monthNum + 1 + " 月" }}</button>
   </view>
 </van-popup>

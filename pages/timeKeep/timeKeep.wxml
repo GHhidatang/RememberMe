@@ -16,4 +16,6 @@
       <text>加班0小时</text>
     </view>
   </view>
+
+  <calendar></calendar>
 </view>

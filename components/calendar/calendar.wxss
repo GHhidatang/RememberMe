@@ -1,1 +1,17 @@
 /* components/calendar/calendar.wxss */
+.calendarWeek {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.calendarDate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day-item {
+  margin: 0rpx;
+  width: 14%;
+  height: 100rpx;
+}
