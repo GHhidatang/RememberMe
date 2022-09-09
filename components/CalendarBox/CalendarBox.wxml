@@ -1,5 +1,5 @@
 <!--components/CalendarBox/CalendarBox.wxml-->
-<button class="ctar" plain="true" bindtap="switchDate">{{ year }}年{{ selectMonth }}月</button>
+<button class="ctar" plain="true" bindtap="switchDate">{{ year }}年{{ selectMonth }}月{{ day }}日</button>
 <van-popup class="popup_1" show="{{ show }}" bind:close="disableDisplayLayer" 
 position="bottom" round closeable>
   <view class="in">

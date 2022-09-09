@@ -1,10 +1,25 @@
 // components/CalendarBox/CalendarBox.js
 // var util = require('../../utils/util.js')
 // component.js
+import {storeBindingsBehavior} from 'mobx-miniprogram-bindings'
+import {store} from "../../store/store"
 const computedBehavior = require('miniprogram-computed').behavior
 
 Component({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, storeBindingsBehavior],
+  storeBindings: {
+    store,
+    fields: {
+      day: 'day',
+      year: 'year',
+      selectMonth: 'selectMonth'
+    },
+    actions: {
+      modifyYear: "modifyYear",
+      changesIn: "changesIn",
+      modificationDate: "modificationDate"
+    }
+  },
   /**
    * 组件的属性列表
    */
@@ -19,9 +34,7 @@ Component({
     nowYear: new Date().getFullYear(),
     months: new Date().getMonth() + 1,
     month_s: 12,
-    day: new Date().getDate(),
-    year: new Date().getFullYear(),
-    selectMonth: new Date().getMonth() + 1
+    a: 1000
   },
   computed: {
     getMonths(data) {
@@ -51,16 +64,18 @@ Component({
     },
     // 弹出层上一年
     lastYear() {
-      this.setData({
-        year: this.data.year - 1
-      })
+      // this.setData({
+      //   year: this.data.year - 1
+      // });
+      this.modifyYear(this.data.year - 1);
     },
     // 弹出层下一年
     nextYear() {
       if (this.data.year != this.data.nowYear) {
-        this.setData({
-          year: this.data.year + 1
-        })
+        // this.setData({
+        //   year: this.data.year + 1
+        // });
+        this.modifyYear(this.data.year + 1);
       }
     },
     // 点击选择月份
@@ -70,5 +85,6 @@ Component({
         show: false
       })
     }
-  }
+
+  },
 })
