@@ -64,24 +64,18 @@ Component({
     },
     // 弹出层上一年
     lastYear() {
-      // this.setData({
-      //   year: this.data.year - 1
-      // });
       this.modifyYear(this.data.year - 1);
     },
     // 弹出层下一年
     nextYear() {
       if (this.data.year != this.data.nowYear) {
-        // this.setData({
-        //   year: this.data.year + 1
-        // });
         this.modifyYear(this.data.year + 1);
       }
     },
     // 点击选择月份
     clickOnSelectMonth(e) {
+      this.changesIn(e.currentTarget.dataset.month + 1)
       this.setData({
-        selectMonth: e.currentTarget.dataset.month + 1,
         show: false
       })
     }

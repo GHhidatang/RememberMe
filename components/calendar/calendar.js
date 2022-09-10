@@ -1,5 +1,20 @@
 // components/calendar/calendar.js
+import {storeBindingsBehavior} from 'mobx-miniprogram-bindings'
+import {store} from "../../store/store"
+
 Component({
+  behaviors: [storeBindingsBehavior],
+  storeBindings: {
+    store,
+    fields: {
+      day: 'day', 
+      lastDay: 'lastDay',
+      week: 'week'
+    },
+    actions: {
+      modificationDate: "modificationDate"
+    }
+  },
   /**
    * 组件的属性列表
    */
@@ -10,10 +25,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    day_date: ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
-    lastDay: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate(),
-    week: new Date(new Date().getFullYear() + new Date().getMonth() + 1 + 1).getDay(),
-    day: new Date().getDate()
+    day_date: ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
   },
 
   /**
@@ -21,11 +33,7 @@ Component({
    */
   methods: {
     calendarDays(e) {
-      console.log(e);
-      this.setData({
-        day: e.currentTarget.dataset.mothnum + 1
-      });
-      console.log(this.data.day);
+      this.modificationDate(e.currentTarget.dataset.mothnum + 1);
     }
   },
 
